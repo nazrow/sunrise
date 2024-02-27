@@ -7,7 +7,7 @@ servomin = 0.000544
 servomax = 0.0024
 step = (servomax - servomin) / 200
 now = (servomax + servomin) / 2
-gpio = troykahat.GpioExpander()
+gpio = troykahat.analog_io()
 gpio.pinMode(0, gpio.OUTPUT)
 # servo = Servo("WPI24", min_pulse_width=servomin, max_pulse_width=servomax)
 
