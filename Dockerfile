@@ -3,7 +3,7 @@ WORKDIR /build
 COPY ./requirements.txt .
 RUN apt-get update && \
     apt-get -y upgrade && \
-    apt-get install -y curl gcc git && \
+    apt-get install -y curl gcc git i2c-tools && \
     pip install --upgrade pip setuptools wheel
 RUN pip install -r requirements.txt
 WORKDIR /app
