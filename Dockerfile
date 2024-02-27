@@ -3,7 +3,7 @@ WORKDIR /build
 COPY ./requirements.txt .
 RUN apt-get update && \
     apt-get -y upgrade && \
-    apt-get install -y curl && \
+    apt-get install -y curl gcc && \
     pip install --upgrade pip setuptools wheel && \
     pip install -r requirements.txt
 WORKDIR /app
