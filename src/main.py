@@ -11,6 +11,7 @@ servo = Servo("WPI6", min_pulse_width=servomin, max_pulse_width=servomax)
 
 print(f'Hey bitch! It\'s {datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%s")}')
 while True:
+    print(now)
     time.sleep(0.1)
     servo.value = now
     now = now + 0.0003 if clockwise else now - 0.0003
@@ -20,4 +21,3 @@ while True:
     elif now < servomin:
         clockwise = True
         now = servomin
-    print(now)
