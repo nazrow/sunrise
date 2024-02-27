@@ -5,8 +5,8 @@ from gpiozero import Servo
 
 servomin = 0.000544
 servomax = 0.0024
+step = (servomax - servomin) / 200
 now = (servomax + servomin) / 2
-clockwise = True
 servo = Servo("WPI6", min_pulse_width=servomin, max_pulse_width=servomax)
 
 print(f'Hey bitch! It\'s {datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%s")}')
@@ -14,10 +14,10 @@ while True:
     print(now)
     time.sleep(0.1)
     servo.value = now
-    now = now + 0.0003 if clockwise else now - 0.0003
+    now = now + step
     if now > servomax:
-        clockwise = False
+        step = step * (-1)
         now = servomax
     elif now < servomin:
-        clockwise = True
+        step = step * (-1)
         now = servomin
