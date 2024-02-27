@@ -7,7 +7,7 @@ servomin = 0.000544
 servomax = 0.0024
 step = (servomax - servomin) / 200
 now = (servomax + servomin) / 2
-servo = Servo("WPI6", min_pulse_width=servomin, max_pulse_width=servomax)
+servo = Servo("WPI23", min_pulse_width=servomin, max_pulse_width=servomax)
 
 print(f'Hey bitch! It\'s {datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%s")}')
 while True:
