@@ -11,5 +11,6 @@ speed = float(args.speed)
 time = float(args.time) / 1000
 pigpio = PiGPIOFactory()
 servo = Servo("WPI24", pin_factory=pigpio)
-
+servo.value = speed
+sleep(time)
 servo.close()
