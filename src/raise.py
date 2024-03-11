@@ -5,5 +5,5 @@ from gpiozero.pins.pigpio import PiGPIOFactory
 pigpio = PiGPIOFactory()
 servo = Servo("WPI24", pin_factory=pigpio)
 servo.value = 1
-sleep(0.1)
+sleep(0.5)
 servo.close()
